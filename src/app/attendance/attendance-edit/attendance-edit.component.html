@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="attendanceForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="!attendanceForm.valid">Save</button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+     
+      <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="startTime">Start Time</label>
+              <input
+                type="datetime-local"
+                id="startTime"
+                formControlName="startTime"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="endTime">End Time</label>
+              <input
+                type="datetime-local"
+                id="endTime"
+                formControlName="endTime"
+                class="form-control">
+            </div>
+          </div>
+        </div>    
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="emailId">Email Id</label>
+              <select id="emailId" formControlName="emailId" class="form-control">
+                  <option value="">Select Email Id</option>
+                  <option *ngFor="let emp of employees" [value]=emp.emailId>{{emp.emailId}}</option>
+                </select>
+            </div>
+          </div>
+        </div>          
+    </form>
+  </div>
+</div>

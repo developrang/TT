@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">      
+          <h2>Search Records</h2>
+         <!-- <form class="form-horizontal" [formGroup] = "recordsForm" >-->
+           <form class="form-horizontal" [formGroup]="recordsForm" (ngSubmit)="onSubmit(recordsForm)"> 
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="email">Email ID:</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" placeholder="Enter Email ID" name="email" formControlName="email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="qtt">Quantity:</label>
+              <div class="col-sm-10">          
+                <input type="number" min="1" class="form-control" id="quantity"  placeholder="Enter Quantity" name="quantity" formControlName="quantity">
+              </div>
+            </div>           
+            <div class="form-group">        
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success" [disabled] = "!recordsForm.valid"  >Submit</button>
+              </div>
+            </div> 
+          </form>
+         <!--  </form>      --> 
+          <hr > 
+  </div>
+
+ 
+
+  <div class="row">
+  
+      <div class="col-xs-12">
+        <table class="table table-condensed table-hover table-responsive table-bordered">
+          <tr>
+            <th>Emp ID</th>
+            <th>Name</th>
+            <th>Email ID</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+           
+          </tr>
+          
+         <tr *ngFor="let record of attendance; let i = index">
+            <td>{{record.employee.id}}</td>
+            <td>{{record.employee.firstName}}</td>
+            <td>{{record.employee.emailId}}</td>
+            <td>{{record.startTime}}</td>
+            <td>{{record.endTime}}</td>            
+         </tr>
+        
+        </table>
+        
+      </div>
+    </div>
+
+</div>
+
+

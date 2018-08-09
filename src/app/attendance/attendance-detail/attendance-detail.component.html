@@ -1,0 +1,39 @@
+  <div class="row">
+      <div class="col-xs-12">
+        <p> Record ID : {{ record.id }} </p>
+      </div>
+    </div>
+
+    
+  <div class="row">
+      <div class="col-xs-12">
+        <p> Email ID : {{ record.employee.emailId }} </p>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-12">
+        <p> Start Time : {{ record.startTime }} </p>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-12">
+        <p> End Time : {{ record.endTime }} </p>
+      </div>
+  </div>
+ 
+
+      <div class="row">
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-primary" 
+                    (click)="onEditRecord()">Edit Record </button>
+            <button type="button" class="btn btn-danger" 
+                    (click)="onDeleteRecord()">Delete Record </button> 
+                    
+          </div>
+        </div>
+
+  
+ 
+  

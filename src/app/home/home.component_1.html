@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+        <h2>Search Records</h2>
+    <form [formGroup]="recordsForm" (ngSubmit)="onSubmit()">     
+     
+      <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="email">Email ID</label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                class="form-control" placeholder="Enter Email ID">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input
+                      type="quantity"
+                      id="quantity"
+                      formControlName="quantity"
+                      class="form-control" placeholder="Enter quantity">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-xs-12">
+                      <div class="form-group">        
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success"  [disabled]="!recordsForm.valid">Submit</button>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                
+    </form>
+  </div>
+</div>

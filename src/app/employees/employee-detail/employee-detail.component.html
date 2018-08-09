@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-xs-12">
+      <img
+        src= "{{'./assets/images/' + employee.imagePath}}"
+        alt="{{ employee.firstName }}"
+        class="img-responsive"
+        style="max-height: 300px;">
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12">
+        <h1>{{ employee.empId }} </h1>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>Name : {{ employee.firstName | uppercase}}  {{ employee.lastName | uppercase}}</p>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12">
+        <p> Email ID : {{ employee.emailId }} </p>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+          <p> Gender : {{ employee.gender == 'male' ? 'Male' : 'Female'  }}</p>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-primary" 
+                    (click)="onEditEmployee()">Edit Employee </button>
+            <button type="button" class="btn btn-danger" 
+                    (click)="onDeleteEmployee()">Delete Employee </button> 
+                    
+          </div>
+        </div>
+
+  
+ 
+  

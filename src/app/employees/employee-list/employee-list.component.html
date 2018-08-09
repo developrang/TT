@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-success pull-left" (click)="onNewEmployee()">New Employee</button>  
+
+      <div class="form-group pull-right">
+          <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Search Employee">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <table class="table table-condensed table-hover table-responsive table-bordered">
+        <tr>
+          <th>Emp ID</th>
+          <th>Name</th>
+          <th>Email ID</th>
+        </tr>
+        <tr app-employee-item
+        *ngFor="let employeeEl of employees | filter : searchText"
+        [employee]="employeeEl"
+        (click)="onEmployeeSelected(employeeEl.id) "></tr>
+      </table>
+      
+    </div>
+  </div>
+  
+  
